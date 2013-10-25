@@ -1,0 +1,73 @@
+---
+title       : Life Satisfaction
+subtitle    : Preliminary Results
+author      : 
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+hitheme: solarized_light
+assets:
+  css:
+  - "http://fonts.googleapis.com/css?family=Raleway:300"
+  - "http://fonts.googleapis.com/css?family=Oxygen"
+--- 
+<style>
+iframe{
+  height:450px;
+  width:900px;
+  margin:auto auto;
+}
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
+
+h1,h2,h3,h4 {
+  font-family: 'Raleway', sans-serif;
+}
+
+</style>
+
+```{r set.global.options, echo=FALSE, cache=FALSE, message=FALSE}
+knitr::opts_chunk$set(comment = NA, echo=F, results = 'asis', tidy = F, message = F)
+```
+
+
+```{r external.code}
+chunk.dir <- 'G:\\research\\mrp\\brfss\\Life_Sat_Results1\\chunks\\'
+read_chunk(paste(chunk.dir,"chunks_A.R",sep=""))
+```
+
+```{r load.libraries.pres}
+```
+
+```{r functions.for.presentation}
+```
+
+```{r load.mcmc.runs}
+```
+
+
+--- 
+
+### Model: 2nd Stage
+
+- We let $\beta$ and ${\rm Var}[\varepsilon]$ vary by category.
+- We model variation in $\beta$ as 
+$$
+\beta_{cj} \sim {\rm N}(\pi_j + \pi^m_j D_c^m, \tau_j),\qquad j=1,\dots,K,
+$$
+
+
+---
+
+### Age and Gender Effects
+
+```{r plot.age.gender.levels, fig.keep='none', cache=F, fig.align='center'}
+```
+
+
+

@@ -50,24 +50,37 @@ read_chunk(paste(chunk.dir,"chunks_A.R",sep=""))
 ```{r load.mcmc.runs}
 ```
 
+```{r load.data}
+```
 
---- 
+### Data and Model
 
-### Model: 2nd Stage
-
-- We let $\beta$ and ${\rm Var}[\varepsilon]$ vary by category.
-- We model variation in $\beta$ as 
-$$
-\beta_{cj} \sim {\rm N}(\pi_j + \pi^m_j D_c^m, \tau_j),\qquad j=1,\dots,K,
-$$
+- Behavioral Risk Factor Surveillance System, 2005-2010.
+- Total Sample Size: `r prettyNum(dim(tmp.dat)[1], big.mark=",", scientific=F)` respondents
+- Dependent Measure: Life Satisfaction (1/0)
+- Independent Measures: Income, Number of Children, Marital Status, Race, Gender, Age, Gender*Age
+- Model: Hierarchical Linear Model with State interactions
 
 
 ---
 
-### Age and Gender Effects
+### Predicted Life Satisfaction by (Age,Gender,State)
 
 ```{r plot.age.gender.levels, fig.keep='none', cache=F, fig.align='center'}
 ```
 
 
+---
+
+### Income and Children Effects by State
+
+```{r plot.income.children, fig.keep='none', cache=F, fig.align='center'}
+```
+
+---
+
+### Income and Children Effects by State
+
+```{r plot.married, fig.keep='none', cache=F, fig.align='center'}
+```
 

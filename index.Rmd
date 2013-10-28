@@ -53,13 +53,48 @@ read_chunk(paste(chunk.dir,"chunks_A.R",sep=""))
 ```{r load.data}
 ```
 
-### Data and Model
+### Data 
 
 - Behavioral Risk Factor Surveillance System, 2005-2010.
 - Total Sample Size: `r prettyNum(dim(tmp.dat)[1], big.mark=",", scientific=F)` respondents
-- Dependent Measure: Life Satisfaction (1/0)
-- Independent Measures: Income, Number of Children, Marital Status, Race, Gender, Age, Gender*Age
-- Model: Hierarchical Linear Model with State interactions
+- Dependent Measure: Life Satisfaction = "In general, how satisfied are you with your life?"
+
+
+--- &twocol w1:40% w2:55%
+
+### Data   
+    
+*** {name: left}
+    
+- Behavioral Risk Factor Surveillance System, 2005-2010.
+- Total Sample Size: <br/>
+    `r prettyNum(dim(tmp.dat)[1], big.mark=",", scientific=F)` respondents
+- Dependent Measure: <br/>
+    Life Satisfaction = "In general, how satisfied are you with your life?"
+    
+*** {name: right}
+
+
+```{r plot.histogram.satisfaction,fig.keep='none', cache=F, fig.align='right'}
+```
+
+--- &basic1
+
+### Model
+
+- Logit with 
+  - 1="Very Satisified"
+  - 0="Satisfied", "Dissatisfied","Very Dissatisfied"
+- Independent Measures: X=(Income, Number of Children, Marital Status, Race, Gender, Age, Gender*Age)
+- All measures are interacted with respondent's state of residence in a multi-level model:
+$$
+{\rm Pr}(S_{i}=1) = \frac{ \exp\{X_i'\beta_{s_i}\} }{ 1 + \exp\{X'\beta_{s_i}\}}
+$$
+where $s_i$ is respondent $i$'s state of residence.
+
+$$
+\beta_{s} \sim {\rm N}(\beta,\Sigma)
+$$
 
 
 ---

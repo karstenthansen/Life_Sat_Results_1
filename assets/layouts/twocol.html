@@ -1,15 +1,15 @@
-<slide class="{{ class }}" id="{{ id }}">
+<slide class="{{ slide.class }}" id="{{ slide.id }}">
   <hgroup>
-    {{{ header }}}
+    {{{ slide.header }}}
   </hgroup>
   <article>
-    <hr noshade size=1 color='blue'>  
-    {{{ content }}}  
-    <div class='left' style='float:left;width:{{{ w1 }}}'>
-     {{{ left }}}
-    </div>    
-    <div class='right' style='float:right;width:{{{ w2 }}}'>
-     {{{ right }}}
+    <hr noshade size=2 color='grey'>  
+    {{{ slide.content }}}  
+   <div class='left' style='float:left;width:{{{ slide.w1 }}}'>
+    {{{ slide.left.html }}}
+   </div>    
+   <div class='right' style='float:right;width:{{{ slide.w2 }}}'>
+    {{{ slide.right.html }}}
     </div>
   </article>
 </slide>
